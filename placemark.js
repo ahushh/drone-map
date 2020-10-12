@@ -1,21 +1,15 @@
-ymaps.ready(init)
+ymaps.ready(init);
 
 function init() {
-  var myMap = new ymaps.Map(
-    "map",
-    {
-      center: [60.461106, 30.290483],
-      zoom: 10,
-    },
-    {
-      searchControlProvider: "yandex#search",
-    }
-  )
+    var myMap = new ymaps.Map('map', {
+        center: [60.461106, 30.290483],
+        zoom: 9,
+        controls: []
+    }, {
+        searchControlProvider: 'yandex#search'
+    });
 
-  myMap.geoObject.add(
-    new ymaps.Placemark(
-      [60.461106, 30.290483],
-      {
+    var placemark = new ymaps.Placemark([60.461106, 30.290483], {
         // Зададим содержимое заголовка балуна.
         balloonContentHeader: '<a href = "#">База отдыха Орехово</a><br>' + '<span class="description">описание</span>',
         // Зададим содержимое основной части балуна.
@@ -27,11 +21,9 @@ function init() {
         balloonContentFooter: "футер",
         // Зададим содержимое всплывающей подсказки.
         hintContent: "подсказка",
-      },
-      {
-        preset: "islands#circleIcon",
-        iconColor: "#0095b6",
-      }
-    )
-  )
+    });
+    // Добавим метку на карту.
+    myMap.geoObjects.add(placemark);
+    // Откроем балун на метке.
+    placemark.balloon.open();
 }

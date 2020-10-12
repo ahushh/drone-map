@@ -17,15 +17,15 @@ function init() {
 <a href="content/1/1.jpg" data-lightbox="roadtrip"><img src="content/1/1.jpg" width="100" /></a>
 <a href="content/1/2.jpg" data-lightbox="roadtrip"><img src="content/1/2.jpg" width="100" /></a>
 <a href="content/1/3.jpg" data-lightbox="roadtrip"><img src="content/1/3.jpg" width="100" /></a>
-<audio controls src="/content/1/sound.m4a"></audio>
+<audio controls src="content/1/sound.m4a"></audio>
 `,
         // Зададим содержимое нижней части балуна.
-        balloonContentFooter: "футер",
+        balloonContentFooter: "что-то тут",
         // Зададим содержимое всплывающей подсказки.
-        hintContent: "подсказка",
+        hintContent: "База отдыха Орехово<",
     });
     // Добавим метку на карту.
     myMap.geoObjects.add(placemark);
     // Откроем балун на метке.
-    placemark.balloon.open();
+    // placemark.balloon.open();
 }
